@@ -1,4 +1,4 @@
-# discord-uptime
+# Discord-Uptime - HTTPS-Response
 Discord bot to monitor uptime and ping addresses
 
 Built using discord.py 1.5.x and ping3 libraries
