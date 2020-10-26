@@ -1,4 +1,6 @@
 config.json
+servers.json
 __pycache__/
 venv/
 .idea/
+

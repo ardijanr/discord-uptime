@@ -1,5 +1,5 @@
 from datetime import timedelta
-
+import requests
 import discord
 from discord.ext import tasks, commands
 from ping3 import ping
@@ -8,6 +8,16 @@ from utils import config as cfg
 
 currently_down = {}
 
+def check200(url):
+    try:
+        reponse = requests.get(url=f"https://{url}/")
+    except:
+        return None
+
+    if "200" in str(reponse):
+        return True
+
+    return False
 
 async def notify_down(name, address, channel, reason):
     if address not in currently_down:
@@ -53,13 +63,22 @@ class Monitor(commands.Cog):
         channel = self.bot.get_channel(cfg.config['notification_channel'])
 
         for i in cfg.servers:
-            if ping(i["address"]) is False:
+
+            if check200(i["address"])==False:
                 await notify_down(i['name'], i["address"], channel, "Host unknown")
-            elif ping(i["address"]) is None:
+            elif check200(i["address"]) is None:
                 await notify_down(i['name'], i["address"], channel, "Timed out")
             else:
                 await notify_up(i['name'], i["address"], channel)
 
+
+#def check200(url):
+#    reponse = requests.get(url=f"https://{url}/")
+#
+#    if "200" in str(reponse):
+#        return True
+#
+#    return False
 
 def setup(bot):
     bot.add_cog(Monitor(bot))

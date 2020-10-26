@@ -4,11 +4,16 @@
       "address": "google.com"
     },
     {
-      "name": "Cloudflare",
-      "address": "1.1.1.1"
+      "name": "SafeCoin",
+      "address": "safecoin.tech"
     },
     {
-      "name": "Invalid",
-      "address": "idont.exist"
+    "name": "NopeMail",
+    "address": "nopemail.net"
+    },
+    {
+    "name": "Mari's Page",
+    "address": "dat250project.herokuapp.com"
     }
+
 ]

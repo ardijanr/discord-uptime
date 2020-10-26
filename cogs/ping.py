@@ -4,7 +4,7 @@ import asyncio
 
 
 class Ping(commands.Cog):
-
+    print("This is being used")
     def __init__(self, bot):
         self.bot = bot
 
@@ -16,6 +16,9 @@ class Ping(commands.Cog):
         :param pings: Number of pings
         :return: Delay in milliseconds or error
         """
+        #if 
+
+
         if ping(address) is False:
             await ctx.send(f"Could not ping {address} - unknown host.")
         elif ping(address) is None:
