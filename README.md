@@ -1,7 +1,7 @@
 This is a fork, creds to the guy who wrote it!
 https://github.com/finlaysawyer/discord-uptime
 
-# Discord-Website-Uptime - HTTPS-Response
+# Discord Website Uptime - HTTPS-Response
 Discord bot that sends HTTPS requests and checks for 200 response.
 
 Built using discord.py 1.5.x and ping3 libraries
