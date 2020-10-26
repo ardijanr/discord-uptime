@@ -6,6 +6,9 @@ Discord bot that sends HTTPS requests and checks for 200 response.
 
 Built using discord.py 1.5.x and ping3 libraries
 
+
+# PS: License is not valid unless owner of code adds the same!
+
 ## Installation
 **Requires Python 3.6+**
 
