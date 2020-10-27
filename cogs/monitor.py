@@ -2,8 +2,7 @@ from datetime import timedelta
 import requests
 import discord
 from discord.ext import tasks, commands
-from ping3 import ping
-
+#from ping3 import ping
 from utils import config as cfg
 
 currently_down = {}
@@ -71,14 +70,8 @@ class Monitor(commands.Cog):
             else:
                 await notify_up(i['name'], i["address"], channel)
 
-
-#def check200(url):
-#    reponse = requests.get(url=f"https://{url}/")
-#
-#    if "200" in str(reponse):
-#        return True
-#
-#    return False
+            #Update config variables
+            cfg.servers, cfg.config = cfg.updateCFG()
 
 def setup(bot):
     bot.add_cog(Monitor(bot))
